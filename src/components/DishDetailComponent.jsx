@@ -4,6 +4,8 @@ import { Link } from 'react-router-dom';
 import { Control, LocalForm, Errors } from 'react-redux-form';
 
 import { Loading } from './LoadingComponent';
+import {baseURL} from '../shared/baseUrl';
+
 
 const required = (val) => val && val.length;
 const maxLength = (len) => (val) => !(val) || (val.length <= len);
@@ -30,7 +32,7 @@ class CommentForm extends React.Component {
   handleSubmit = (values) => {
     alert(JSON.stringify(values));
     this.toggleModal();
-    this.props.addComment(this.props.dishId, values.rating, values.author, values.comment);
+    this.props.postComment(this.props.dishId, values.rating, values.author, values.comment);
   }
 
   render() {
@@ -105,7 +107,7 @@ class CommentForm extends React.Component {
 
 
 
-function RenderComments({ commentsAux, addComment, dishId }) {
+function RenderComments({ commentsAux, postComment, dishId }) {
 
   if (commentsAux !== null) {
 
@@ -132,7 +134,7 @@ function RenderComments({ commentsAux, addComment, dishId }) {
         {comments}
 
         <CommentForm
-          addComment={addComment}
+          postComment={postComment}
           dishId={dishId}
         />
 
@@ -151,7 +153,7 @@ function RenderComments({ commentsAux, addComment, dishId }) {
 function RenderDish({ dish }) {
   if (dish !== null) {
     const dishElement = <Card>
-      <CardImg width="80%" src={dish.image} alt={dish.name} />
+      <CardImg top width="80%" src={baseURL+dish.image} alt={dish.name} />
       <CardBody>
         <CardTitle>{dish.name}</CardTitle>
         <CardText>
@@ -194,7 +196,7 @@ const DishDetail = (props) => {
     );
   } else if (props.dish != null) {
     
-    const { dish, comments, addComment } = props;
+    const { dish, comments, postComment } = props;
 
     return (
 
@@ -219,7 +221,7 @@ const DishDetail = (props) => {
           <RenderDish dish={dish} />
           <RenderComments
             commentsAux={comments}
-            addComment={addComment}
+            postComment={postComment}
             dishId={dish.id} />
         </div>
       </div>
