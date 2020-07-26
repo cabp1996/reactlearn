@@ -54,6 +54,57 @@ export const postComment = (dishId, rating, author, comment) => (dispatch) => {
 };
 
 
+/*post feedback */
+
+export const addFeedback = (feedback) => ({
+    type: ActionTypes.ADD_FEEDBACK,
+    payload: feedback
+});
+
+export const postFeedback = (firstname, lastname, telnum, email, agree, contactType, message) => (dispatch) => {
+
+    const newFeeback = {
+        firstname, lastname, telnum, email, agree, contactType, message
+    }
+
+
+    return fetch(baseURL + 'feedback',
+        {
+            method: 'POST',
+            body: JSON.stringify(newFeeback),
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            credentials: 'same-origin'
+        }).then(
+            (response) => {
+                if (response.ok) {
+                    return response;
+                } else {
+                    let error = new Error('Error ' + response.status + ':' + response.statusText);
+                    error.response = response;
+                    throw error;// con esto le mando al catch
+                }
+            },
+            (error) => {//si hay error en la comunicacion
+                let errmess = new Error(error.message);
+                throw errmess; //mando al catch
+            }
+        )
+        .then(response => response.json())
+        .then(feedback => {
+            alert('OK\n'+JSON.stringify(feedback));
+            dispatch(addFeedback(feedback));})//tomo el json
+        .catch(
+            error => {
+                console.log('Post feedback', error.message)
+                alert('Tu feedback no pudo ser agregado\nError: ' + error.message)
+            }
+        );
+
+};
+
+
 /*ACTION CREATORS*/
 
 //ESTO ES A THUNK QUE DESPACHA A LLAMA VARIAS ACCIONES
@@ -175,4 +226,51 @@ export const promosFailed = (errmess) => ({
 export const addPromos = (promos) => ({
     type: ActionTypes.ADD_PROMOS,
     payload: promos
+});
+
+
+/* LEADERS */
+
+export const fetchLeaders = () => (dispatch) => {
+    dispatch(leadersLoading(true));
+    return fetch(baseURL + 'leaders')
+        .then(
+            (response) => {
+                if (response.ok) {
+
+                    return response;
+                } else {
+                    let error = new Error('Error ' + response.status + ':' + response.statusText);
+                    error.response = response;
+                    throw error;// con esto le mando al catch
+                }
+            },
+            (error) => {//si hay error en la comunicacion
+                let errmess = new Error(error.message);
+                throw errmess; //mando al catch
+            })
+
+        .then(response => response.json())//1ero convierto la respuesta a json
+        .then(leaders => {
+            console.log(leaders);
+            dispatch(addLeaders(leaders))
+        })//tomo el json
+        .catch(
+            error => dispatch(leadersFailed(error))
+        );
+}
+
+export const leadersLoading = () => ({
+    type: ActionTypes.LEADERS_LOADING
+});
+
+export const leadersFailed = (errmess) => ({
+    type: ActionTypes.LEADERS_FAILED,
+    payload: errmess
+});
+
+
+export const addLeaders = (leaders) => ({
+    type: ActionTypes.ADD_LEADERS,
+    payload: leaders
 });

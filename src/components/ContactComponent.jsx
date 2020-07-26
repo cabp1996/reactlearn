@@ -1,7 +1,7 @@
 import React from 'react';
 import { Breadcrumb, BreadcrumbItem, Button, Col, Label, Row } from 'reactstrap';
 import { Link } from 'react-router-dom';
-import { Control, LocalForm, Errors, actions,Form } from 'react-redux-form';
+import { Control, LocalForm, Errors, Form } from 'react-redux-form';
 
 const required = (val) => val && val.length;
 const maxLength = (len) => (val) => !(val) || (val.length <= len);
@@ -14,90 +14,15 @@ class Contact extends React.Component {
 
     constructor(props) {
         super(props);
-
-        // this.state = {
-        //     firstname: '',
-        //     lastname: '',
-        //     telnum: '',
-        //     email: '',
-        //     agree: false,
-        //     contactType: 'Tel.',
-        //     message: '',
-        //     touched: {
-        //         firstname: false,
-        //         lastname: false,
-        //         telnum: false,
-        //         email: false,
-        //     }
-        // }
-
-
-        //this.handleBlur = this.handleBlur.bind(this);
     }
 
-    // handleInputChange = (event) => {
-    //     const target = event.target;
-    //     const value = target.type === 'checkbox' ? target.checked : target.value;
-    //     const name = target.name;
-
-    //     this.setState({
-    //         [name]: value
-    //     });
-    // }
-
+ 
     handleSubmit = (values) => {
-        console.log("eSTADO", JSON.stringify(values))
+        this.props.postFeedback(values.firstname, values.lastname, values.telnum, values.email, values.agree, values.contactType, values.message);
         this.props.resetFeedbackForm();
     }
 
-    // handleBlur = (field) => (evt) => {
-    //     this.setState({
-    //         touched: {
-
-    //             ...this.state.touched,
-    //             [field]: true
-
-    //         }
-    //     });
-    // }
-
-    validate(firstname, lastname, telnum, email) {
-        const errors = {
-            firstname: '',
-            lastname: '',
-            telnum: '',
-            email: '',
-        }
-
-        if (this.state.touched.firstname && firstname.toString().length < 3) {
-            errors.firstname = 'First name should be >=3 characters';
-        } else if (this.state.touched.firstname && firstname.toString().length > 10) {
-            errors.firstname = 'First name should be <= 10 characters';
-        }
-
-        if (this.state.touched.lastname && lastname.length < 3) {
-            errors.lastname = 'Last name should be >=3 characters';
-        } else if (this.state.touched.lastname && lastname.length > 10) {
-            errors.lastname = 'Last name should be <= 10 characters';
-        }
-
-        const reg = /^\d+$/; //todos los caracteres deben ser numeros
-        if (this.state.touched.telnum && !reg.test(telnum)) {
-            errors.telnum = 'Tel. Number should contain only numbers.'
-        }
-
-        if (this.state.touched.email && email.split('').filter(x => x === '@').length !== 1) {
-            errors.email = 'Email must contain @';
-        }
-
-        return errors;
-    }
-
-
     render() {
-
-        //se pone aqui porque cada vez que haya un cambio se llemara a render
-        //const errors = this.validate(this.state.firstname, this.state.lastname, this.state.telnum, this.state.email);
 
         return (
             <div className="container">
@@ -176,10 +101,6 @@ class Contact extends React.Component {
                                             }}
                                         />
                                     </span>
-
-                                    {/* <FormFeedback>
-                                        {errors.firstname}
-                                    </FormFeedback> */}
                                 </Col>
                             </Row>
 
@@ -207,9 +128,6 @@ class Contact extends React.Component {
                                             maxLength: 'Must be 15 characters or less'
                                         }}
                                     />
-                                    {/* <FormFeedback>
-                                        {errors.lastname}
-                                    </FormFeedback> */}
                                 </Col>
                             </Row>
 

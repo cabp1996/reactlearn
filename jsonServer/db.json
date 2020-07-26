@@ -277,6 +277,36 @@
       "message": "afadsfds",
       "date": "2017-12-04T09:41:49.890Z",
       "id": 1
+    },
+    {
+      "firstname": "Cesar",
+      "lastname": "Balcazar",
+      "telnum": "342423423423",
+      "email": "alvaro2105lt@gmail.com",
+      "agree": true,
+      "contactType": "Email",
+      "message": "Hola!",
+      "id": 2
+    },
+    {
+      "firstname": "Cesar",
+      "lastname": "Balcazar",
+      "telnum": "342423423423",
+      "email": "andres-1818-@hotmail.com",
+      "agree": true,
+      "contactType": "Email",
+      "message": "Hola!",
+      "id": 3
+    },
+    {
+      "firstname": "Cesar",
+      "lastname": "Balcazar",
+      "telnum": "342423423423",
+      "email": "andres-1818-@hotmail.com",
+      "agree": true,
+      "contactType": "Tel.",
+      "message": "HOLA",
+      "id": 4
     }
   ]
 }
