@@ -40,6 +40,7 @@ export default class Header extends React.Component { //se crea como componenete
                     <div className="container">
                         <NavbarToggler onClick={this.toggleNav} />
                         <NavbarBrand className="mr-auto" href="/">
+                         
                             <img src="assets/images/logo.png" height="30" width="41" alt="Ristorante Con Fusion" />
                         </NavbarBrand>
 
@@ -82,10 +83,9 @@ export default class Header extends React.Component { //se crea como componenete
                     <div className="container">
                         <div className="row row-header">
                             <div className="col-12 col-md-6">
-                                <h1>Ristorante con Fusion</h1>
+                                <h1>Fusion Restaurant</h1>
                                 <p>
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas esse debitis voluptatem. Quos quisquam vel ipsa cumque non vitae, adipisci fuga mollitia veniam impedit porro animi a earum deserunt! Suscipit.
-                                </p>
+                                    Restaurant with wide variety of international food with fusion of local flavors. You have the experience of chefs who have traveled around the world to gather the best flavors.                                </p>
                             </div>
                         </div>
                     </div>

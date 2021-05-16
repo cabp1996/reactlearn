@@ -2,18 +2,18 @@
   "dishes": [
     {
       "id": 0,
-      "name": "Uthappizza",
-      "image": "images/uthappizza.png",
+      "name": "American/Italian pizza",
+      "image": "images/uthappizza.jpg",
       "category": "mains",
       "label": "Hot",
       "price": "4.99",
       "featured": true,
-      "description": "A unique combination of Indian Uthappam (pancake) and Italian pizza, topped with Cerignola olives, ripe vine cherry tomatoes, Vidalia onion, Guntur chillies and Buffalo Paneer."
+      "description": "A unique combination of American and Italian pizza, topped with Cerignola olives, ripe vine cherry tomatoes, Vidalia onion, Guntur chillies and Buffalo Paneer."
     },
     {
       "id": 1,
-      "name": "Zucchipakoda",
-      "image": "images/zucchipakoda.png",
+      "name": "Lemon cheese cake",
+      "image": "images/zucchipakoda.jpg",
       "category": "appetizer",
       "label": "",
       "price": "1.99",
@@ -46,32 +46,32 @@
       "id": 0,
       "dishId": 0,
       "rating": 5,
-      "comment": "Imagine all the eatables, living in conFusion!",
-      "author": "John Lemon",
-      "date": "2012-10-16T17:57:28.556094Z"
+      "comment": "Nice combination of two styles!",
+      "author": "Santiago Sarmiento",
+      "date": "2016-10-16T17:57:28.556094Z"
     },
     {
       "id": 1,
       "dishId": 0,
       "rating": 4,
-      "comment": "Sends anyone to heaven, I wish I could get my mother-in-law to eat it!",
-      "author": "Paul McVites",
-      "date": "2014-09-05T17:57:28.556094Z"
+      "comment": "I would like to come back just to taste this again!",
+      "author": "Diego Poveda",
+      "date": "2016-09-05T17:57:28.556094Z"
     },
     {
       "id": 2,
       "dishId": 0,
       "rating": 3,
-      "comment": "Eat it, just eat it!",
-      "author": "Michael Jaikishan",
+      "comment": "It's nice with a good cold beer :)",
+      "author": "Carito Ramirez",
       "date": "2015-02-13T17:57:28.556094Z"
     },
     {
       "id": 3,
       "dishId": 0,
       "rating": 4,
-      "comment": "Ultimate, Reaching for the stars!",
-      "author": "Ringo Starry",
+      "comment": "Nice combination, nice tomatoes, nice cheese!",
+      "author": "Marco Ranses",
       "date": "2013-12-02T17:57:28.556094Z"
     },
     {
@@ -220,8 +220,8 @@
   "promotions": [
     {
       "id": 0,
-      "name": "Weekend Grand Buffet",
-      "image": "images/buffet.png",
+      "name": "International beef buffet",
+      "image": "images/buffet.jpg",
       "label": "New",
       "price": "19.99",
       "featured": true,
@@ -231,16 +231,16 @@
   "leaders": [
     {
       "id": 0,
-      "name": "Peter Pan",
+      "name": "Carlos Alberto Pazmiño",
       "image": "images/alberto.png",
       "designation": "Chief Epicurious Officer",
       "abbr": "CEO",
       "featured": false,
-      "description": "Our CEO, Peter, credits his hardworking East Asian immigrant parents who undertook the arduous journey to the shores of America with the intention of giving their children the best future. His mother's wizardy in the kitchen whipping up the tastiest dishes with whatever is available inexpensively at the supermarket, was his first inspiration to create the fusion cuisines for which The Frying Pan became well known. He brings his zeal for fusion cuisines to this restaurant, pioneering cross-cultural culinary connections."
+      "description": "Whipping up the tastiest dishes with whatever is available inexpensively at the supermarket, was his first inspiration to create the fusion cuisines for which The Frying Pan became well known. He brings his zeal for fusion cuisines to this restaurant, pioneering cross-cultural culinary connections."
     },
     {
       "id": 1,
-      "name": "Dhanasekaran Witherspoon",
+      "name": "Chef Leader",
       "image": "images/alberto.png",
       "designation": "Chief Food Officer",
       "abbr": "CFO",
@@ -258,7 +258,7 @@
     },
     {
       "id": 3,
-      "name": "Alberto Somayya",
+      "name": "Diego Portero Lopez",
       "image": "images/alberto.png",
       "designation": "Executive Chef",
       "abbr": "EC",

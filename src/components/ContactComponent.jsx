@@ -48,16 +48,16 @@ class Contact extends React.Component {
                     <div className="col-12 col-sm-4 offset-sm-1">
                         <h5>Our Address</h5>
                         <address>
-                            121, Clear Water Bay Road<br />
-                            Clear Water Bay, Kowloon<br />
-                            HONG KONG<br />
-                            <i className="fa fa-phone"></i>: +852 1234 5678<br />
-                            <i className="fa fa-fax"></i>: +852 8765 4321<br />
-                            <i className="fa fa-envelope"></i>: <a href="mailto:confusion@food.net">confusion@food.net</a>
+                            Barrio Eloy Alfaro<br />
+                            S5A and E19B<br />
+                            Tumbaco<br />
+                            <i className="fa fa-phone"></i>: +593 123 456<br />
+                            <i className="fa fa-fax"></i>: +593 321 654<br />
+                            <i className="fa fa-envelope"></i>: <a href="mailto:confusion@food.net">fusionfood@gmail.com</a>
                         </address>
                     </div>
                     <div className="col-12 col-sm-6 offset-sm-1">
-                        <h5>Map of our Location</h5>
+                        {/* <h5>Map of our Location</h5> */}
                     </div>
                     <div className="col-12 col-sm-11 offset-sm-1">
                         <div className="btn-group" role="group">
